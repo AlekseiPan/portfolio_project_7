@@ -1,0 +1,152 @@
+.plus-accordion__list {
+  list-style: none;
+  padding: 40px 16px 60px;
+  margin: 0;
+
+  @media (min-width: $desktop-width) {
+    padding: 64px 52px 120px;
+  }
+}
+
+.plus-accordion__header {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+
+  @media (min-width: $desktop-width) {
+    font-size: 20px;
+  }
+}
+
+.plus-accordion__item {
+  padding-left: 10px;
+  border-radius: 15px;
+
+  @media (min-width: $desktop-width) {
+    padding-left: 15px;
+  }
+}
+
+.plus-accordion__item:not(:last-child) {
+  margin-bottom: 15px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.plus-accordion__item:nth-of-type(4n + 1) {
+  background-color: $blue;
+}
+
+.plus-accordion__item:nth-of-type(4n + 2) {
+  background-color: $light-blue;
+}
+
+.plus-accordion__item:nth-of-type(4n + 3) {
+  background-color: $teal;
+}
+
+.plus-accordion__item:nth-of-type(4n + 4) {
+  background-color: $green;
+}
+
+.plus-accordion__inner {
+  border-radius: 15px;
+  padding: 14px 17px;
+  background-color: $white;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  // row-gap: 15px;
+  column-gap: 50px;
+  align-items: center;
+  min-height: 70px;
+  box-sizing: border-box;
+
+  @media (min-width: $desktop-width) {
+    padding: 15px 52px 15px 35px;
+    min-height: 72px;
+  }
+}
+
+.plus-accordion__button {
+  position: relative;
+  width: 41px;
+  height: 41px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.plus-accordion__button::before {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: $white;
+}
+
+.plus-accordion__button::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 19px;
+  border-radius: 2px;
+  background-color: $white;
+  transition: height 0.5s ease-in-out;
+}
+
+.plus-accordion__inner--current .plus-accordion__button::after {
+  height: 2px;
+}
+
+.plus-accordion__item:nth-of-type(4n + 1) .plus-accordion__button {
+  background-color: $blue;
+}
+
+.plus-accordion__item:nth-of-type(4n + 2) .plus-accordion__button {
+  background-color: $light-blue;
+}
+
+.plus-accordion__item:nth-of-type(4n + 3) .plus-accordion__button {
+  background-color: $teal;
+}
+
+.plus-accordion__item:nth-of-type(4n + 4) .plus-accordion__button {
+  background-color: $green;
+}
+
+@media (hover: hover) {
+  .plus-accordion__item .plus-accordion__button:hover {
+    background-color: $gray;
+  }
+}
+
+.plus-accordion__content {
+  font-size: 16px;
+  font-weight: 400;
+  grid-column: 1 / 3;
+  max-height: 0;
+  margin-top: 0;
+  transition: max-height 0.2s ease-in-out, margin-top 0.2s ease-in-out;
+  overflow: hidden;
+
+  @media (min-width: $desktop-width) {
+    font-weight: 500;
+  }
+}
+
+.plus-accordion__inner--current .plus-accordion__content {
+  max-height: 100px;
+  margin-top: 15px;
+}
+
+.plus-accordion__content p {
+  margin: 0;
+}

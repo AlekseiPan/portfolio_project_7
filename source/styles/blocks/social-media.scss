@@ -1,0 +1,73 @@
+.social-media {
+  padding: 0 16px 50px;
+
+  @media (min-width: $desktop-width) {
+    width: 214px;
+    padding: 5px 0 0;
+  }
+}
+
+.social-media__list {
+  list-style: none;
+  padding: 0 0 40px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 24px;
+  }
+}
+
+.social-media__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 35px;
+
+  @media (min-width: $desktop-width) {
+    width: auto;
+    height: auto;
+  }
+}
+
+.social-media__icon {
+  transition: 0.2s;
+
+  @media (min-width: $desktop-width) {
+    &--vk {
+      width: 19px;
+      height: 12px;
+    }
+
+    &--odnoklassniki {
+      width: 14px;
+      height: 14px;
+    }
+
+    &--telegram {
+      width: 18px;
+      height: 15px;
+    }
+
+    &--rutube {
+      width: 16px;
+      height: 16px;
+    }
+
+    &--zen {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .social-media__link:hover .social-media__icon {
+    fill: $white;
+  }
+}

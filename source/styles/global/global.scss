@@ -1,0 +1,78 @@
+/* здесь используйте глобальные селекторы img, body, html и так далее*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.center {
+  width: 480px;
+  margin: 0 auto;
+
+  @media (min-width: 1400px) {
+    width: 1400px;
+  }
+}
+
+.underline {
+  position: relative;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.2s ease-in-out;
+  }
+
+  &:before {
+    right: 50%;
+  }
+
+  &:after {
+    left: 50%;
+  }
+
+  &--narrow {
+    &::before,
+    &::after {
+      height: 1px;
+    }
+  }
+}

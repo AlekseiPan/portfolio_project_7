@@ -1,0 +1,27 @@
+.science {
+  padding-bottom: 50px;
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 100px;
+  }
+}
+
+.science__header {
+  font-size: 32px;
+  text-align: center;
+  margin: 0 0 30px;
+
+  @media (min-width: $desktop-width) {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+.science__overlay {
+  padding: 296px 0 50px;
+  background-color: $black;
+
+  @media (min-width: $desktop-width) {
+    padding: 234px 0 90px;
+  }
+}

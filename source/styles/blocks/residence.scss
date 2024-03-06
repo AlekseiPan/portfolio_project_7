@@ -1,0 +1,17 @@
+.residence {
+  padding: 0 16px 50px;
+
+  @media (min-width: $desktop-width) {
+    padding: 0 52px 100px;
+  }
+}
+
+.residence__header {
+  font-size: 40px;
+  margin: 0 0 30px;
+  text-align: center;
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 50px;
+  }
+}
