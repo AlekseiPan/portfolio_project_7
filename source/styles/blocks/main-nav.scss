@@ -139,9 +139,10 @@
 .main-nav__menu {
   position: absolute;
   top: 72px;
-  left: 50%;
-  transform: translate(-50%);
+  // left: 50%;
+  // transform: translate(-50%);
   z-index: 2;
+  min-width: 480px;
   width: 100%;
   // padding-right: calc(20px - (100vw - 100%));
   transition: top 0.2s ease-in-out;
@@ -158,6 +159,7 @@
 
 .main-nav__list {
   list-style: none;
+  // min-width: 480px;
   padding: 0 0 80px;
   margin: 0;
   background-color: $black;
@@ -187,6 +189,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    min-width: 480px;
     width: 100vw;
     height: 1px;
 
@@ -201,6 +204,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  min-width: 480px;
   width: 100vw;
   height: 1px;
   background-color: $blue;
