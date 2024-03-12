@@ -2,9 +2,11 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 
 /* Programs slider */
 
-/* Для ширины экрана до 1400px */
+/* ДЛЯ ШИРИНЫ ЭКРАНА ДО 1400px */
 
 const accordionButtons = document.querySelectorAll('.plus-accordion__button');
+
+/* Функция для удаления класса plus-accordion__inner--current для пункта программы */
 
 const removeCurrentButton = () => {
   accordionButtons.forEach((accordionButton) => {
@@ -19,6 +21,8 @@ const removeCurrentButton = () => {
     }
   });
 };
+
+/* Реализация слайдера */
 
 let swiperPrograms1 = null;
 let swiperPrograms2 = null;
@@ -60,10 +64,10 @@ function destroySwipers() {
   }
 }
 
-// Инициализация слайдеров при загрузке страницы
+/* Инициализация слайдеров при загрузке страницы */
 initSwipers();
 
-// Проверка инициализации слайдеров при изменении размера окна
+/* Проверка инициализации слайдеров при изменении размера окна */
 window.addEventListener('resize', () => {
   if (window.innerWidth < 1400) {
     destroySwipers();
@@ -73,7 +77,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-// Перелистывание слайдера при ширине экрана <= 1400px
+/* Перелистывание слайдера */
 
 const arrowPrev = document.querySelector('.programs__arrow--left');
 const arrowNext = document.querySelector('.programs__arrow--right');
@@ -92,7 +96,7 @@ arrowNext.addEventListener('click', () => {
   }
 });
 
-/* Управление аккордионом открывающимся на плюс */
+/* УПРАВЛЕНИЕ АККОРДИОНОМ, ОТКРЫВАЮЩИМСЯ НА ПЛЮС */
 
 for (let i = 0; i < accordionButtons.length; i++) {
   accordionButtons[i].addEventListener('click', () => {
@@ -118,7 +122,7 @@ for (let i = 0; i < accordionButtons.length; i++) {
   });
 }
 
-/* Для ширины экрана более 1400px */
+/* ДЛЯ ШИРИНЫ ЭКРАНА БОЛЕЕ 1400px */
 
 const programSwitches = document.querySelectorAll('.programs__name-item');
 const programNames = document.querySelectorAll('.programs__item');
@@ -151,6 +155,21 @@ const programNamesAsButtons = () => {
 
 programNamesAsButtons();
 
+/* Добавление фокуса на переключателях программ */
+
+const toggleTabIndex = () => {
+  if (window.innerWidth >= 1400) {
+    programSwitches.forEach((programsSwitch) => {
+      programsSwitch.setAttribute('tabindex', '0');
+    });
+  } else {
+    programSwitches.forEach((programsSwitch) => {
+      programsSwitch.removeAttribute('tabindex');
+    });
+  }
+};
+
 window.addEventListener('resize', () => {
   programNamesAsButtons();
+  toggleTabIndex();
 });

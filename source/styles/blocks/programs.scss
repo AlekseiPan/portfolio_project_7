@@ -49,6 +49,11 @@
 
   @media (min-width: $desktop-width) {
     width: 433px;
+    cursor: pointer;
+
+    &.programs__name-item--current {
+      cursor: auto;
+    }
   }
 }
 
@@ -105,7 +110,6 @@
     padding: 29px 27px 19px;
     margin-top: 10px;
     background-color: $white;
-    cursor: pointer;
 
     &--masters {
       padding-left: 80px;
