@@ -30,7 +30,7 @@ function initSwipers() {
     swiperPrograms2 = new Swiper('.swiperPrograms2', {
       direction: 'horizontal',
       loop: true,
-      slidesPerView: 'auto',
+      allowTouchMove: false,
       autoHeight: true,
       breakpoints: {
         1400: {
@@ -42,7 +42,7 @@ function initSwipers() {
     swiperPrograms1 = new Swiper('.swiperPrograms1', {
       direction: 'horizontal',
       loop: true,
-      slidesPerView: 'auto',
+      allowTouchMove: false,
       controller: {
         control: swiperPrograms2,
       },
@@ -66,6 +66,7 @@ initSwipers();
 // Проверка инициализации слайдеров при изменении размера окна
 window.addEventListener('resize', () => {
   if (window.innerWidth < 1400) {
+    destroySwipers();
     initSwipers();
   } else {
     destroySwipers();
@@ -112,8 +113,6 @@ for (let i = 0; i < accordionButtons.length; i++) {
     );
 
     accordionButtons[i].parentElement.addEventListener('transitionend', () => {
-      // const programNamesList = document.querySelector('.programs__list');
-      // programNamesList.style.height = 'auto';
       swiperPrograms2.update();
     });
   });

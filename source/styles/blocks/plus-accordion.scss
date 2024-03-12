@@ -53,14 +53,12 @@
 
 .plus-accordion__inner {
   border-radius: 15px;
-  padding: 14px 17px;
+  padding: 14px 17px 15px;
   background-color: $white;
   display: grid;
   grid-template-columns: 1fr min-content;
-  // row-gap: 15px;
   column-gap: 50px;
   align-items: center;
-  min-height: 70px;
   box-sizing: border-box;
 
   @media (min-width: $desktop-width) {
