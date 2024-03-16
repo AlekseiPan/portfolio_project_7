@@ -62,8 +62,7 @@
   box-sizing: border-box;
 
   @media (min-width: $desktop-width) {
-    padding: 15px 52px 15px 35px;
-    min-height: 72px;
+    padding: 15px 52px 16px 35px;
   }
 }
 
@@ -141,7 +140,7 @@
 }
 
 .plus-accordion__inner--current .plus-accordion__content {
-  max-height: 100px;
+  max-height: 500px;
   margin-top: 15px;
 }
 
